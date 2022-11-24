@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <title>Sanrio Matching Game</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <label for="caixa-1">
+            <input type="checkbox" id="caixa-1" onclick="desativaCheckbox(check1)">
+            <i></i>
+        </label>
+        <label for="caixa-2">
+            <input type="checkbox" id="caixa-2" onclick="desativaCheckbox(check2)">
+            <i></i>
+        </label>
+        <label for="caixa-3">
+            <input type="checkbox" id="caixa-3" onclick="desativaCheckbox(check3)">
+            <i></i>
+        </label>
+    </div>
+    <button class="reset" type="button" onclick="recomecaJogo()">recomeçar</button>
+
+    <script>
+        let check1 = document.querySelector("#caixa-1");
+        let check2 = document.querySelector("#caixa-2");
+        let check3 = document.querySelector("#caixa-3");
+
+        function desativaCheckbox(input) {
+            if (input.checked === true) {
+                input.disabled = 'true';
+            }
+        }
+
+        function recomecaJogo() {
+            document.querySelectorAll("[type='checkbox']").forEach(element => {
+                element.disabled = false;
+                element.checked = false;
+            });
+        }
+    </script>
+</body>
+
+</html>
